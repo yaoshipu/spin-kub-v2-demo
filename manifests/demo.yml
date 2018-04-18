@@ -41,7 +41,6 @@ spec:
         envFrom:
         - configMapRef:
             name: spinnaker-demo-config
-
 ---
 
 kind: Service
