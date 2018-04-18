@@ -1,12 +1,12 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: spinnaker-demo-config
-  namespace: default
-data:
-  NEW_FEATURE: "true"
+# apiVersion: v1
+# kind: ConfigMap
+# metadata:
+#   name: spinnaker-demo-config
+#   namespace: default
+# data:
+#   NEW_FEATURE: "true"
 
----
+# ---
 
 apiVersion: apps/v1beta1
 kind: Deployment
@@ -42,18 +42,18 @@ spec:
         - configMapRef:
             name: spinnaker-demo-config
 
----
+# ---
 
-kind: Service
-apiVersion: v1
-metadata:
-  name: spinnaker-demo
-  namespace: default
-spec:
-  selector:
-    source: demo
-    app: spinnaker
-  ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 8000
+# kind: Service
+# apiVersion: v1
+# metadata:
+#   name: spinnaker-demo
+#   namespace: default
+# spec:
+#   selector:
+#     source: demo
+#     app: spinnaker
+#   ports:
+#   - protocol: TCP
+#     port: 80
+#     targetPort: 8000
