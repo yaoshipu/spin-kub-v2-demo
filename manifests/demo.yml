@@ -31,8 +31,7 @@ spec:
     spec:
       containers:
       - name: primary
-        image: reg.qiniu.com/spock-resources/spin-kub-v2-demo:1.0.2
-        ports:
+·        ports:
         - containerPort: 8000
         readinessProbe:
           httpGet:
@@ -41,17 +40,17 @@ spec:
         envFrom:
         - configMapRef:
             name: spinnaker-demo-config
----
-kind: Service
-apiVersion: v1
-metadata:
-  name: spinnaker-demo
-  namespace: default
-spec:
-  selector:
-    source: demo
-    app: spinnaker
-  ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 8000
+# ---
+# kind: Service
+# apiVersion: v1
+# metadata:
+#   name: spinnaker-demo
+#   namespace: default
+# spec:
+#   selector:
+#     source: demo
+#     app: spinnaker
+#   ports:
+#   - protocol: TCP
+#     port: 80
+#     targetPort: 8000
